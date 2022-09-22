@@ -1,0 +1,382 @@
+https://visualstudio.microsoft.com/vs/
+
+Problem:- Find the sum of two numbers taken input from user
+
+Algorithm:
+Step1:- Take input of the two numbers n1 and n2
+Step2:- Add the two numbers
+Step3:- Display the sum of the numbers
+Step4:- End 
+
+PSEUDOCODE:-
+0) START
+1) INPUT numbe1, number2
+2) sum = number1 + number2
+3) PRINT sum
+4) END
+
+Problem: Display the bonus of a salary input from user. If salary is greater than 5000 then bonus is 10% of salary otherwise bonus is 20% of salary.
+
+Algorithm:
+Step1 : Take input of salary 
+Step2: If salary > 5000 then bonus is 10% of salary, goto step 4
+Step3: If salary is <=5000 then bonus is 20% of salary
+Step4: Display bonus
+Step5: End
+
+PSEUDOCODE:
+BEGIN
+	DECLARE salary,bonus
+	INPUT salary
+	IF salary>5000 THEN
+	BEGIN
+		SET bonus=0.1*salary
+	END
+	ELSE
+	BEGIN
+		SET bonus=0.2*salary
+	END
+	END IF
+	PRINT bonus
+END
+
+
+Algorithm---->Pseudocode---->Source code----->compiler------>execute--->output
+
+
+ 
+Step1- Forked the assignment boiler plate code
+Step2- Clone it locally: url
+-open command prompt:
+git clone https://gitlab-cgi.stackroute.in/raman9999/algorithm_exercise.git	
+Step3: goto the cloned assignment folder in local
+Step4: Solve the exercise and update the files accordingly
+Step5: Update the changes to remote repo
+	git add .
+	git commit -m "message description"
+	git push --all
+
+
+
+-To install git in local
+https://git-scm.com/downloads
+
+--To configure git 
+git config --global user.name "Ramnath"
+git config --global user.email raman9999@gmail.com
+
+-To check the configuration values
+git config --global --list 
+
+
+
+
+
+
+
+
+
+
+
+
+
+structure
+
+
+Enum:-
+
+
+
+
+
+
+
+str=$"{100+200}";   ----string interpolation which allows using expression inside the string using {}
+
+
+
+Procedural Oriented:
+Program= Func1(data)+ Func2(data)+Func3(data)
+
+OOPs:- Object Oriented Programming
+Program=Object(func) + Object(func) + Object(func)
+
+
+Object= attributes(identity) + behaviors(to communicate attributes)
+e.g.
+CAR:
+	attributes:
+		-model
+		-color
+		-price
+		-engine
+		-speed
+		-gear
+	behaviors:
+		-start()
+		-stop()
+		-changegear()
+		-ApplyHorn()
+
+
+
+--Constructor and Destructor:-
+ctor: - is a special member method of an object which is called automatically when the object is created. Any initial tasks like data initializations can be done in the ctor method.
+
+destructor:- this is also called automatically when the is object is destroyed. Normally used for releasing resources held by object which is not released automatically by .NET Runtime service garbage collector.
+
+-ctors can be overloaded more than once but destructor cannot be.
+-ctors can be private,public and static but destructor has no modifiers and access specifiers.
+
+syntax=>
+ctor----------> 
+class Employee
+{
+
+}
+-ctor name must be same as of classname and no return type , not even void.
+
+
+ILDASM.exe
+
+
+	
+
+static:- members are allocated and accessed using class and not for each instance.
+-static methods can access only static members
+-non-static methods can access both static and non-static as well.
+
+
+Relations:-
+	a) Aggregation and Composition----->"part-of"
+	b) Inheritance----->"Kind-of"
+
+a) Aggregation :- weak containment:- 
+b) Composition:- Strong containment:-
+c) Association:- "uses" anothe object
+
+
+Inheritance:-
+Bird is a kind of Animal
+
+Crow is a kind of Bird
+Pigeon is a kind of Bird
+
+
+Lion is a kind of Animal
+
+
+
+class Student
+{
+	Skill[] skills;
+
+}
+
+class Skill
+{
+	int technologyId;
+	string technology;
+}
+
+class Department
+{
+	int id;
+	string dname;
+	int mgr_id;
+}
+
+class Project
+{
+	int pid;
+	string description;
+}
+class Employee
+{
+	int ecode;
+	string ename;
+	int salary;
+	Department dept;
+	Project[] projects;
+}
+
+
+
+
+
+Inheritance:
+
+Vehicle
+	-Brake
+	-Horn
+
+TwoWheeler inherits Vehicle
+	-Stand
+
+Fourwheeler inherits Vehicle
+	-Ac
+	-Music
+
+
+
+Ques: There are two types of employes : Permanent and Contractual
+
+All employees has following data fields:
+	-ecode
+	-ename
+	-emailid
+Permanent employees has salary field wheras contractual employees has 50000/- per month fixed amount is there.
+Permanent employees also has yearly bonus provided as per 10% of salary.
+
+Design the classses and take input from user type of employee and hence respective details and then calculate the employee's total yearly salary.
+
+
+Access specifiers:- These are used to provide access level for different members of a class.
+
+-private:- it is accessed only inside the class. Outside class or not even inside derived(child) class , these members are not accessible.
+Normally it is used for fields and internal methods.
+
+-public: unlimited access is provided. It can be accessed inside,outside class, within derived class and also even in other projects (assemblies).
+
+-protected:- Few elements are needed by the derived classes but not outside the class, we declare them as a protected.
+
+ 
+-internal:- internally(for the current project) these are public but for external assemblies or projects these are like private.
+
+-protected internal:- internally(for the current project) these are public but for external assemblies or projects these are like protected i.e. can be accessed by the external assemblies or project only through inheritance within the derived class only.
+
+How to create and share libraries:-
+Step1: create a project using template Library project
+Step2: Define the classes inside the library project and make sure to define the classes with public access if you want to share it.
+Step3: Build the library to get .dll file with no compilation errors
+
+Step4: Goto the consumer project and Add Reference of the classlibrary
+Step5: import the namespace in which classes are defined
+Step6: Use the classes in the consumer project as usual.
+
+Note: default access specifier for class is internal and for fields and methods are private.
+
+
+OOPs:
+1) Encapsulation
+2) Abstraction
+3) Inheritance
+4) Polymorphism:- A method changes behavior in different situations.
+a) Static polymorphism:- is done using method overloading.
+b) Dynamic polymorphism:- is done using method overriding in inheritance.
+
+Add(10,20)----> performs sum
+Add("Hello","World")------>perform string concatenation
+
+
+
+
+
+Overriding cab done from base to derived classes with few ways:
+1) Mandatory overriding at derived class level. "abstract" declaration of method at base level makes it mandatory to override at derived level.
+
+	-using abstract class having abstract methods
+	-using interface which has all methods by default public and abstract
+
+2) Optional overriding at derived class level. "virtual" keyword is used to provide optional overriding at derived class.
+
+
+Note: mutiple class inheritance is not allowed, it is achieved using interfaces.
+
+
+Method overloading
+Method overriding
+Method hiding
+
+Sealed classes and methods:-
+
+Partial classes and methods:-
+
+--------------------const and readonly-----------------------
+
+
+
+
+
+
+
+
+
+
+-out and ref:
+These are used to pass the paramenters to a method using by-reference for the value-type variables.
+	*out:- makes sure the argument passed gets modified mandatorily
+	*ref:- it gives optional modification for the argument passed.
+
+
+-Nullable type:- These are value-type variables which can also store null value.
+	int? x=null
+To access the value:
+	if(x.HasValue)
+	{
+		Console.WriteLine(x.Value);
+	}
+
+
+
+
+
+-Convert,Parse and TryParse:-
+Convert:- used to convert from one type to another type.
+	if data is invalid, it gives format exception.
+	if data is null, it gives default value
+
+Parse and TryParse : used to convert only a string to another type
+-Parse: gives exception whether it is invalid data or null data
+-TryParse:- gives default value if it is invalid or null data
+
+Namespaces:-
+These are used to logically group or bind data-types like classes,interfaces,structures, enum into one single unit.
+Usage: to get them available for sharing in other parts of the program using the namespace.
+Another usage is to resolve name conflict among types.
+
+Working with DateTime:-
+
+Properties:-
+	-fields
+	-properties----->methods used to access private fields of a class in an easier way.
+
+Automatic properties:- get;set;
+Object-initializer syntax:-
+
+
+
+Working with string:- string is immutable i.e. cannot be modified
+
+string s="Hello";
+s="World";
+
+StringBuilder sb=new StringBuilder("");
+
+sb.Append("hello");
+
+
+File operations:- Reading and writing data file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
